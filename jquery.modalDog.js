@@ -16,11 +16,6 @@
 		// Update plugin config with options
 		modalDog.config = $.extend({}, defaults, options);
 
-		if(!mobile) {
-			// Set height of sub-inner
-			$('.sub-inner').height($(window).height() - $('#header').height() - modalDog.config['topPadding']);
-		}
-
 		// Click modal trigger link
 		$('body').on('click', '.trigger-modal', function(e) {
 			e.preventDefault();
