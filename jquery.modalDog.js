@@ -20,6 +20,9 @@
 		$('body').on('click', '.trigger-modal', function(e) {
 			e.preventDefault();
 
+			// Run callback first (incase we're loading content) - passing callback all data attributes of trigger
+			if(modalDog.config['callback']) {modalDog.config['callback']($(this).data());}
+
 			// Show modal
 			$('.modal[data-modal="'+$(this).data('modal')+'"]').addClass('active');
 		});
